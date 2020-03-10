@@ -26,7 +26,7 @@
 
 ## Description
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+Demonstrates issue with monorepo.  Once one project (default or otherwise) is started in watch mode, a second one will not be in watch mode.
 
 ## Installation
 
@@ -34,42 +34,12 @@
 $ npm install
 ```
 
-## Running the app
+## Steps
 
-```bash
-# development
-$ npm run start
+1. install :smiley:
+2. run `nest start mono-test --watch` in one terminal
+3. run `nest start app1 --watch` in another terminal
+4. make changes to mono-test project, and see that watch mode works (webpack recompiles)
+5. make changes to app1 project and see that watch mode does not work
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
-```
-
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
-
-## License
-
-  Nest is [MIT licensed](LICENSE).
+Note: if you reverse the order of steps 2 and 3, the effect is reversed (first one in watch mode "wins")
