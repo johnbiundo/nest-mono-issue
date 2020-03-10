@@ -43,3 +43,5 @@ $ npm install
 5. make changes to app1 project and see that watch mode does not work
 
 Note: if you reverse the order of steps 2 and 3, the effect is reversed (first one in watch mode "wins")
+
+Update: switching compiler to `tsc` "fixes" the problem.
